@@ -77,8 +77,9 @@ export class HousesController {
             const form = window.event?.target
             const formData = getFormData(form)
             console.log('here is the form data', formData)
-            await housesService.creatHouse(formData)
+            await housesService.createHouse(formData)
             form.reset()
+            bootstrap.Modal.getOrCreateInstance('button-id').hide()
 
         } catch (error) {
             Pop.error(error)

@@ -12,11 +12,14 @@ class HousesService {
 
 
 
-    async creatHouse(formData) {
-        const res = await api.post('api/houses', formData)
+    async createHouse(formData) {
+        const res = await api.post('api/houses/', formData)
         console.log('here is the homes', formData)
 
         console.log('this is the house', AppState.houses)
+        const newHouse = new House(res.data)
+        AppState.houses.push(newHouse)
+        AppState.emit('houses')
 
     }
 
