@@ -6,7 +6,7 @@ import { setHTML } from '../utils/Writer.js'
 function _drawHome() {
   setHTML('app', /*html*/`
 <div class="container-fluid">
-  
+
   <div class="row my-3">
     <div class="col-lg-5">
       <div class="card p-2">

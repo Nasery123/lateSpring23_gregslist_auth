@@ -24,14 +24,14 @@ class CarsService {
     const res = await api.post('api/cars', formData)
     // we only reach here if the server thought the formData was good...
     console.log('what is the data we get back... 🤷‍♂️', res.data)
-    // ⚠️ Do not use map on a single item 
+    // ⚠️ Do not use map on a single item
     console.log('🐟 -> 🍣', res.data)
 
     // STEP 2 - take the response and let the user know their form was successful
-    // we add the data to the AppState 
+    // we add the data to the AppState
     const newCar = new Car(res.data)
     AppState.cars.push(newCar)
-    // 👂triggers the listeners 
+    // 👂triggers the listeners
     AppState.emit('cars')
 
 

@@ -32,6 +32,7 @@
           <!-- NAVLINKS -->
           <a href="#/about" class="nav-link">About</a>
           <a href="#/cars" class="nav-link">Cars</a>
+          <a onclick="app.HousesController.getHousesFromApi()" href="#/homes" class="nav-link">Homes</a>
         </div>
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
@@ -39,16 +40,53 @@
   </header>
 
   <main class="container-fluid">
-    <div class="row" id="app">
+    <div class="row" id="house">
     </div>
-      
+    <!-- Note form for creating new house -->
+    <div id="houseForm">
+      <!-- <h1 class="title fs-5" id="form">LIST NEW HOUSE </h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> CLOSE</button>
+    </div>
+    <form onsubmit="app.HousesController.creatHouse()">
+      <div class="body container-fluid">
+        <section class="row">
+          <div class="mb-3 col-6">
+            <label for="bedroom" class="form-label">Bedrooms</label>
+            <input required type="number" class="form-control" id="bedroom" name="bedroom">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="bathroom" class="form-label">Bathrooms</label>
+            <input required type="number" class="form-control" id="bathroom" name="bathroom">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="Garage" class="form-label">Garage</label>
+            <input required type="number" class="form-control" id="Garage" name="Garage">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="price" class="form-label">price</label>
+            <input required type="number" class="form-control" id="price" name="price">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="imgUrl" class="form-label">Photo</label>
+            <input required  class="form-control" id="image" name="imgUrl">
+          </div>
+
+
+
+        </section>
+      </div>
+    </form> -->
+
 
   </main>
 
-<!-- 
+  <!--
   <button data-bs-toggle="offcanvas" data-bs-target="#that-bottom-thing" >OPEN THE Bottom</button> -->
-  
+
   <div class="sticky-bottom" id="the-place-to-put-the-button">
+
+  </div>
+  <div class="button " id="button-id">
 
   </div>
 
