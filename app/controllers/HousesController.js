@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { Account } from "../models/Account.js"
 import { House } from "../models/House.js"
 import { housesService } from "../services/HousesService.js"
 import { getFormData } from "../utils/FormHandler.js"
@@ -38,6 +39,7 @@ export class HousesController {
 
         AppState.on('houses', _drawHouses)
         //AppState.on()
+        AppState.on('account', _drawButton)
 
     }
 
