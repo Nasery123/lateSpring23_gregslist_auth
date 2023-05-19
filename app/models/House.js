@@ -1,23 +1,33 @@
 import { AppState } from "../AppState.js"
 
 export class House {
-    constructor(data) {
-        this.id = data.id
-        this.bedrooms = data.bedrooms
-        this.bathrooms = data.bathrooms
-        this.imgUrl = data.imgUrl
-        this.price = data.price
-    }
-    get HouseTemplate() {
-        return /*html*/`
+  constructor(data) {
+    this.id = data.id
+    this.bedrooms = data.bedrooms
+    this.bathrooms = data.bathrooms
+    // why this image url is comming as undifined? is it beacuse it its not required.
+    this.imgUrl = data.imgUrl
+    this.price = data.price
+    this.description = data.description
+    this.levels = data.levels
+    this.year = data.year
+
+  }
+  get HouseTemplate() {
+    return /*html*/`
     <div class="col-md-4 my-3">
       <div class="card elevation-1">
 
-        <img class="rounded-top" src="${this.imgUrl}" alt="">
+        <img class="rounded-top" src="${this.imgUrl}" alt=" a nice house ">
         <p>BEDROOMS: ${this.bedrooms} </p>
         <p>BATHROOMS:${this.bathrooms}</p>
+        <p>${this.description}</p>
+        <p>${this.levels}</p>
+        <p>${this.year}</p>
+
 
         $${this.price}
+
         </div>
         </div>
         `
@@ -26,10 +36,10 @@ export class House {
 
 
 
-    }
+  }
 
-    static HouseForm() {
-        return /*html*/`
+  static HouseForm() {
+    return /*html*/`
         <div class="flex-end">
         <h1 class="title fs-5" id="form">LIST NEW HOUSE </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -38,12 +48,12 @@ export class House {
         <div class="body container-fluid">
           <section class="row">
             <div class="mb-3 col-6">
-              <label for="bedroom" class="form-label">Bedrooms</label>
-              <input required type="number" class="form-control" id="bedroom" name="bedroom">
+              <label for="bedrooms" class="form-label">Bedrooms</label>
+              <input required type="number" class="form-control" id="bedrooms" name="bedrooms">
             </div>
             <div class="mb-3 col-6">
-              <label for="bathroom" class="form-label">Bathrooms</label>
-              <input required type="number" class="form-control" id="bathroom" name="bathroom">
+              <label for="bathrooms" class="form-label">Bathrooms</label>
+              <input required type="number" class="form-control" id="bathrooms" name="bathrooms">
             </div>
             <div class="mb-3 col-6">
               <label for="Garage" class="form-label">Garage</label>
@@ -55,7 +65,19 @@ export class House {
             </div>
             <div class="mb-3 col-6">
               <label for="imgUrl" class="form-label">Image</label>
-              <input required type="" class="form-control" id="image" name="image">
+              <input type="url" class="form-control" id="img" name="img">
+            </div>
+            <div class="mb-3 col-6">
+              <label for="levels" class="form-label">Levels</label>
+              <input required type="number" class="form-control" id="levels" name="levels">
+            </div>
+            <div class="mb-3 col-6">
+              <label for="description" class="form-label">description</label>
+              <input required type="text" class="form-control" id="description" name="description">
+            </div>
+            <div class="mb-3 col-6">
+              <label for="year" class="form-label">year</label>
+              <input required type="" class="form-control" id="year" name="year">
             </div>
 
 
@@ -67,5 +89,5 @@ export class House {
         <button type="submit" class="btn btn-success">SUBMIT</button>
       </div>
       </form>`
-    }
+  }
 }
