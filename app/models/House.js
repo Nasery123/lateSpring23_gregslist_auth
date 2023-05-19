@@ -6,7 +6,8 @@ export class House {
     this.bedrooms = data.bedrooms
     this.bathrooms = data.bathrooms
     // why this image url is comming as undifined? is it beacuse it its not required.
-    this.imgUrl = data.imgUrl
+
+    this.imgUrl = data.imgUrl || 'https://media.hd.pics/2/m0b4wn1gn9.jpg'
     this.price = data.price
     this.description = data.description
     this.levels = data.levels
