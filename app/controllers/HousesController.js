@@ -17,7 +17,7 @@ function _drawHouses() {
 }
 function _drawButton() {
     if (AppState.account) {
-        setHTML('button', '<button class="btn btn-dark square" data-bs-toggle="modal" data-bs-target="#button-id" >OPEN THE MODAL</button>')
+        setHTML('button-id', '<button class="btn btn-dark square" data-bs-toggle="modal" data-bs-target="#button-id" >OPEN THE MODAL</button>')
     }
 }
 
@@ -32,14 +32,18 @@ function _drawButton() {
 
 
 export class HousesController {
-    constructor(data) {
+    constructor() {
         //AppState.on('houses', _drawHouses)
         setHTML('houseForm', House.HouseForm())
         _drawButton()
 
-        AppState.on('houses', _drawHouses)
+
         //AppState.on()
         AppState.on('account', _drawButton)
+
+        this.getHousesFromApi()
+        AppState.on('houses', _drawHouses)
+        AppState.on('account', _drawHouses)
 
     }
 
@@ -73,7 +77,7 @@ export class HousesController {
 
 
 
-    async createHouse(formData) {
+    async createHouse() {
         try {
             window.event.preventDefault()
             const form = window.event?.target
@@ -89,4 +93,20 @@ export class HousesController {
         }
 
     }
+
+    async deletHouse(id) {
+        try {
+            const yes = await Pop.confirm('do you want to delet your house')
+            if (!yes) {
+                await housesService.deletHouse(id)
+
+            }
+        } catch (error) {
+            Pop.error(error)
+
+        }
+    }
+
+
+
 }

@@ -31,9 +31,9 @@ export class Car {
             </span>
           </p>
           <div class="d-flex align-items-center justify-content-between border-top pt-2">
-              
+
               ${this.deleteButtonIfCarIsYours}
-          
+
               <div>
                 <span class="text-capitalize">${this.creator.name}</span>
                 <img class="rounded seller-picture" src="${this.creator.picture}" alt="${this.creator.name}">
@@ -53,8 +53,8 @@ export class Car {
     }
 
     return /*html*/`
-    <button 
-      class="btn btn-danger" 
+    <button
+      class="btn btn-danger"
       onclick="app.CarsController.deleteCar('${this.id}')"
     >💀</button>`
 
@@ -116,4 +116,4 @@ export class Car {
 
 
 
-} 
+}

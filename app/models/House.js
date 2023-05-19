@@ -28,6 +28,9 @@ export class House {
 
         $${this.price}
 
+
+
+
         </div>
         </div>
         `
@@ -90,4 +93,13 @@ export class House {
       </div>
       </form>`
   }
+
+
+  // get deletButton() {
+  //   if (this.creatorId != AppState.account.id) {
+  //     return ''
+  //   }
+  //   return `
+  //   button class="btn btn-warning" onclick = "app.HouseController.deletHouse('${this.id}')> 🗑️ </button>`
+  // }
 }
