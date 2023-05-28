@@ -54,7 +54,7 @@ export class House {
 
   static HouseForm() {
     return /*html*/`
-      < div class=" modal-header flex-end" >
+
         <h1 class="modal-title fs-5" id="exampleModalLabel">LIST NEW HOUSE </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </ >
