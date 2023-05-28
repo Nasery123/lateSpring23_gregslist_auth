@@ -17,7 +17,8 @@ function _drawHouses() {
 }
 function _drawButton() {
     if (AppState.account) {
-        setHTML('button-id', '<button class="btn btn-dark square" data-bs-toggle="modal" data-bs-target="#button-id" >OPEN THE MODAL</button>')
+
+        setHTML('button-id', '<button class="btn btn-dark square" data-bs-toggle="modal" data-bs-target="#target-id" >OPEN THE MODAL</button>')
     }
 }
 
@@ -94,10 +95,10 @@ export class HousesController {
 
     }
 
-    async deletHouse(id) {
+    async deleteHouse(id) {
         try {
             const yes = await Pop.confirm('do you want to delet your house')
-            if (!yes) {
+            if (yes) {
                 await housesService.deletHouse(id)
 
             }

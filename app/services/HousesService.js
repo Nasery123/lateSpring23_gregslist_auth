@@ -5,11 +5,13 @@ import { api } from "./AxiosService.js"
 
 
 class HousesService {
-
-    async deletCar(id) {
-        const res = await api.delet(`api/cars/${id}`)
+    async deletHouse(id) {
+        const res = await api.delete(`api/houses/${id}`)
         AppState.houses = AppState.houses.filter(h => h.id != id)
+        console.log('[THIS IS THE HOUSE YOU WANT TO DELET', res.data)
     }
+
+
 
 
 

@@ -50,7 +50,7 @@ export class CarsController {
 
   async createCar() {
     try {
-      // we are submitting a form.... 
+      // we are submitting a form....
       window.event.preventDefault()
       // 🛩️ target acquired
       const form = window.event.target

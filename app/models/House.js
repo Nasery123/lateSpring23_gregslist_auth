@@ -12,6 +12,7 @@ export class House {
     this.description = data.description
     this.levels = data.levels
     this.year = data.year
+    this.creatorId = data.creatorId
 
   }
   get HouseTemplate() {
@@ -32,6 +33,7 @@ export class House {
 
 
 
+        <button class="btn btn-danger" onclick="app.HousesController.deleteHouse('${this.id}')">🗑️</button>
         </div>
         </div>
         `
@@ -42,14 +44,22 @@ export class House {
 
   }
 
+  // get deletIfHousesIsYours() {
+  //   if (this.creatorId != AppState.account?.id) {
+  //     return ''
+  //   }
+  //   return/*html*/`
+
+  // }
+
   static HouseForm() {
     return /*html*/`
-        <div class="flex-end">
-        <h1 class="title fs-5" id="form">LIST NEW HOUSE </h1>
+      < div class=" modal-header flex-end" >
+        <h1 class="modal-title fs-5" id="exampleModalLabel">LIST NEW HOUSE </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+      </ >
       <form onsubmit="app.HousesController.createHouse()">
-        <div class="body container-fluid">
+        <div class="modal-body container-fluid">
           <section class="row">
             <div class="mb-3 col-6">
               <label for="bedrooms" class="form-label">Bedrooms</label>
@@ -83,16 +93,16 @@ export class House {
               <label for="year" class="form-label">year</label>
               <input required type="" class="form-control" id="year" name="year">
             </div>
-
-
-
-          </section>
         </div>
-        <div class="modal-footer">
+
+
+      </section>
+        </div >
+      <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">CLOSE</button>
         <button type="submit" class="btn btn-success">SUBMIT</button>
       </div>
-      </form>`
+      </form > `
   }
 
 
